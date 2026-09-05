@@ -1,0 +1,26 @@
+EVIDENCIAS - ENTREGA FINAL AUTOMATIZACIÓN CON IA
+
+01. Flujo principal completo en Make.
+02. Ruta verde: correo automático Gmail.
+03. Ruta verde: resultado del caso en Notion.
+04. Ruta verde: registro de ejecución exitosa.
+05. Ruta amarilla: resultado del caso en Notion.
+06. Ruta amarilla: acción de seguimiento creada.
+07. Ruta amarilla: registro de ejecución exitosa.
+08. Ruta roja: caso crítico en Notion.
+09. Ruta roja: acción crítica / escalamiento.
+10. Slack HITL: alerta de caso crítico y comandos APROBAR/RECHAZAR.
+11. Escenario HITL: aprobación ejecutada en Make.
+12. HITL: registro OK-APROBAR en Ejecuciones.
+13. Escenario HITL: rechazo ejecutado en Make.
+14. HITL: registro OK-RECHAZAR en Ejecuciones.
+15. Manejo de errores: error 503 de Gemini.
+16. Resiliencia: recuperación mediante Incomplete Execution / retry.
+17. Observabilidad: tabla Ejecuciones y tasa de error.
+18. Dashboard: distribución por clasificación IA.
+19. Matriz de costos y escalabilidad.
+20. Diagrama de arquitectura Mermaid.
+21. Modelo de datos y contratos JSON.
+
+Orden recomendado para PDF/GitHub:
+Arquitectura -> Flujo principal -> Verde -> Amarillo -> Rojo/HITL -> Errores/Retry -> Observabilidad/Dashboard -> Costos -> Modelo de datos/JSON.
