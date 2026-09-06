@@ -87,6 +87,11 @@ Cuando un caso es rechazado:
 
 Este mecanismo permite mantener trazabilidad entre la respuesta originalmente generada por IA y el contenido finalmente autorizado por una persona.
 
+### Correlación de comunicaciones
+
+Cada encuesta utiliza un identificador único `ENC-ID`, que permite correlacionar el registro de Notion, la notificación enviada a Slack, la decisión humana y la comunicación final mediante Gmail.
+
+En este prototipo, Gmail realiza el primer contacto saliente asociado al caso, por lo que no existe un Thread ID previo que reutilizar. En una continuidad conversacional, el Thread ID retornado por Gmail puede almacenarse asociado al `ENC-ID` para mantener los mensajes posteriores dentro del mismo hilo.
 ---
 
 ## Inteligencia Artificial
@@ -332,6 +337,12 @@ En una etapa piloto, gran parte de la infraestructura puede operar utilizando pl
 
 A mayor volumen, el principal costo incremental corresponde a la orquestación mediante Make, mientras que el procesamiento mediante IA mantiene un costo marginal reducido.
 
+### Comparativa y selección del modelo IA
+
+La evaluación de costos incluye una matriz comparativa entre Gemini 3.8 Flash, GPT-5 mini, Claude Haiku 4.5 y Gemini 3.8 Flash Batch. La selección considera no solo el costo por tokens, sino también la adecuación a la tarea, la integración con el ecosistema, la necesidad de procesamiento en tiempo real y las posibilidades de optimización mediante procesamiento Batch.
+
+Gemini 3.8 Flash fue seleccionado para la operación en tiempo real por su integración validada con Make, capacidad de generar salidas JSON estructuradas, baja latencia y relación costo-capacidad adecuada para el caso de uso. Para procesos masivos que no requieren respuesta inmediata, Gemini Batch constituye una alternativa futura de optimización de costos.
+
 ---
 
 ## Seguridad y gobernanza
@@ -367,6 +378,7 @@ La arquitectura busca que una decisión sensible generada mediante IA no se ejec
 | Human-in-the-Loop | Slack | Aprobación de casos críticos |
 | Intercambio de información | JSON | Salida estructurada del modelo |
 
+> **Nota sobre el motor de IA:** El proyecto utiliza Google Gemini 3.8 Flash como motor LLM para clasificación, análisis de sentimiento y generación de respuestas estructuradas. El uso de Gemini como alternativa a OpenAI/Anthropic fue validado previamente con el equipo docente para esta entrega.
 ---
 
 ## Estructura del repositorio
@@ -447,6 +459,19 @@ Entre las evidencias se incluyen:
 
 ---
 
+## Enlaces públicos
+
+Para facilitar la revisión técnica del ecosistema, se encuentran disponibles las siguientes vistas públicas de Notion en modo lectura:
+
+- [Dashboard de Control](https://app.notion.com/p/Ecosistema-de-Automatizaci-n-IA-Experiencia-de-Clientes-3ccb7b140f5a80f986a6f43fbd18fe31)
+- [Experiencia de Clientes](https://app.notion.com/p/3ccb7b140f5a80208433c6e5afd9c01a?v=3ccb7b140f5a80c7bb08000cda4aea39)
+- [Acciones de Seguimiento](https://app.notion.com/p/3d0b7b140f5a80f2b0a9ed018e803234?v=3d0b7b140f5a803ab319000c86af1238)
+- [Ejecuciones](https://app.notion.com/p/3d1b7b140f5a80aabd40e113174c5cab?v=3d1b7b140f5a80dcb6cb000caddefcc4)
+
+El Dashboard de Control centraliza los KPIs, distribución de clasificación IA, tasa de error, arquitectura, Human-in-the-Loop, costos y documentación del proyecto.
+
+Las bases públicas permiten revisar la trazabilidad entre encuestas, acciones y ejecuciones. Los datos fueron sanitizados antes de su publicación para evitar la exposición de nombres, correos electrónicos y otra información personal.
+
 ## Estado del proyecto
 
 **Automatización funcional y validada end-to-end.**
@@ -471,6 +496,9 @@ Principales capacidades implementadas:
 - ✅ Matriz de costos
 - ✅ Blueprints exportables
 - ✅ Evidencias de pruebas
+- ✅ Dashboard público de control
+- ✅ Bases de datos públicas en modo lectura
+- ✅ Comparativa de modelos IA y estrategia de optimización Batch
 
 ---
 
