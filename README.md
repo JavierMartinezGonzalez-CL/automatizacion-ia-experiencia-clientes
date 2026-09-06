@@ -424,6 +424,14 @@ Los escenarios exportados de Make se encuentran disponibles en:
 Los Blueprints permiten revisar la configuración completa de módulos, routers, filtros, mapeos, Error Handlers y lógica de los escenarios.
 
 ---
+## Video Demo
+
+Video demostrativo de aproximadamente 3 minutos donde se presenta el funcionamiento end-to-end del ecosistema: trigger, procesamiento mediante IA, rutas de decisión, Human-in-the-Loop, manejo de errores, observabilidad y resultado final.
+
+[Ver Video Demo](https://drive.google.com/file/d/1ZrFQfNAXA2NnpvximmSQ1-k2XaOfgUaR/view?usp=sharing)
+
+---
+
 
 ## Documentación final
 
