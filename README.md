@@ -4,7 +4,7 @@ Ecosistema autónomo de inteligencia artificial para procesar encuestas de satis
 
 La solución integra Microsoft Forms, Excel/OneDrive, Make, Google Gemini, Notion, Gmail y Slack, incorporando automatización end-to-end, Human-in-the-Loop, trazabilidad, manejo de errores, reintentos y monitoreo operacional.
 
----
+----
 
 ## Objetivo
 
